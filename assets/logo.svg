@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Campus Invasion Movement">
+  <defs>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C9A227"/>
+      <stop offset="100%" stop-color="#1F8A8A"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="54" fill="none" stroke="url(#ring)" stroke-width="4"/>
+  <circle cx="60" cy="60" r="42" fill="#0B1F33"/>
+  <path d="M60 28 L72 52 H88 L76 68 L82 92 L60 78 L38 92 L44 68 L32 52 H48 Z"
+        fill="#C9A227" opacity="0.95"/>
+  <text x="60" y="108" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#C9A227" letter-spacing="1">CIM</text>
+</svg>
