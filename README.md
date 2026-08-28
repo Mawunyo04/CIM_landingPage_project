@@ -1,13 +1,13 @@
 # Campus Invasion Movement
 
-Landing page for **Campus Invasion Movement** — a Christian campus fellowship.
+Landing page for **Campus Invasion Movement** — a Christian campus fellowship raising kingdom leaders for God's end-time harvest.
+
+**University of Calgary · Alberta, Canada**
 
 ## View locally
 
-Open `index.html` in your browser, or serve the folder with any static host.
+Open `index.html` in your browser.
 
-## Share
+## Connect
 
-Public repo: [AY4LIFE/campus-invasion-movement](https://github.com/AY4LIFE/campus-invasion-movement)
-
-Ministry details (meeting times, contacts, logo) are placeholders — swap them in as you finalize the site.
+- Instagram: [@cimnorthamerica](https://instagram.com/cimnorthamerica)

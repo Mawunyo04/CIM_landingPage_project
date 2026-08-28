@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 400" role="img" aria-hidden="true">
+  <rect width="320" height="400" fill="#f0ecec"/>
+  <rect x="0" y="0" width="320" height="6" fill="#8c1f33"/>
+  <circle cx="160" cy="155" r="52" fill="#d95f76" opacity="0.35"/>
+  <text x="160" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#8c1f33" letter-spacing="2">PHOTO</text>
+  <text x="160" y="312" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#5c5c5c">COMING SOON</text>
+</svg>
