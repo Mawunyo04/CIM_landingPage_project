@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=6" />
   <link rel="icon" href="assets/cim-logo.png" type="image/png" />
 </head>
 <body>
@@ -83,32 +83,64 @@
       </div>
     </section>
 
+    <section class="section leaders-cta" data-reveal>
+      <a class="leaders-cta-link" href="about.html">
+        <div class="leaders-cta-inner">
+          <div>
+            <p class="eyebrow">The people behind the mission</p>
+            <h2>Meet our leaders</h2>
+            <p class="leaders-cta-text">Get to know the pastors and team raising kingdom leaders on campus.</p>
+          </div>
+          <span class="leaders-cta-arrow" aria-hidden="true">&rarr;</span>
+        </div>
+      </a>
+    </section>
+
     <section class="section invite" id="join" data-reveal>
-      <div class="section-inner invite-inner">
-        <p class="eyebrow">Join us</p>
-        <h2>Come be part of the invasion.</h2>
-        <p class="lead">
-          Whether you&rsquo;re exploring faith or ready to go deeper, there&rsquo;s a place for you at CIM.
-        </p>
-        <dl class="invite-details">
-          <div>
-            <dt>Campus</dt>
-            <dd>University of Calgary</dd>
-          </div>
-          <div>
-            <dt>Region</dt>
-            <dd>Alberta, Canada</dd>
-          </div>
-          <div>
-            <dt>When</dt>
-            <dd>Connect Bible Study every Wednesday at 4pm in the Landing</dd>
-          </div>
-          <div>
-            <dt>Instagram</dt>
-            <dd><a href="https://instagram.com/cimnorthamerica" target="_blank" rel="noopener noreferrer">@cimnorthamerica</a></dd>
-          </div>
-        </dl>
-        <a class="btn btn-primary" href="https://instagram.com/cimnorthamerica" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+      <div class="invite-layout">
+        <div class="invite-copy">
+          <p class="eyebrow invite-eyebrow">Join us</p>
+          <h2>We are pleased to have you at the table.</h2>
+          <p class="invite-intro">
+            Whether you&rsquo;re exploring faith or ready to go deeper, there&rsquo;s a place for you at CIM.
+            Fill out the form and we&rsquo;ll connect with you about joining the invasion.
+          </p>
+          <ul class="invite-list">
+            <li>Come to Connect Bible Study — Wednesdays at 4pm in the Landing.</li>
+            <li>Tell us your name and how to reach you.</li>
+            <li>We will follow up with next steps within a few days.</li>
+          </ul>
+          <p class="invite-meta">
+            University of Calgary &middot; Alberta &middot;
+            <a href="https://instagram.com/cimnorthamerica" target="_blank" rel="noopener noreferrer">@cimnorthamerica</a>
+          </p>
+        </div>
+
+        <div class="join-form-wrap">
+          <form class="join-form" action="https://formsubmit.co/ayomideakinsanya11@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New CIM join request from website" />
+            <input type="hidden" name="_next" value="thanks.html" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" class="join-form-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <label class="join-field">
+              <span>First name</span>
+              <input type="text" name="first_name" autocomplete="given-name" required />
+            </label>
+            <label class="join-field">
+              <span>Last name</span>
+              <input type="text" name="last_name" autocomplete="family-name" required />
+            </label>
+            <label class="join-field">
+              <span>Phone number</span>
+              <input type="tel" name="phone" autocomplete="tel" required />
+            </label>
+            <label class="join-field">
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+            <button class="btn btn-join" type="submit">Join the invasion</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>

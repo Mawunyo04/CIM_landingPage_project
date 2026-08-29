@@ -6,6 +6,9 @@
   --rose-soft: #f0a3b3;
   --paper: #fafafa;
   --paper-muted: #f0ecec;
+  --cream: #f7f3ee;
+  --form-border: #e8e2dc;
+  --form-label: #4a4340;
   --white: #ffffff;
   --text: #2a2a2a;
   --muted: #5c5c5c;
@@ -310,8 +313,7 @@ a:hover {
   margin: 0 auto;
 }
 
-.gather .section-inner,
-.invite .section-inner {
+.gather .section-inner {
   width: min(100%, var(--max));
 }
 
@@ -357,6 +359,20 @@ a:hover {
     radial-gradient(ellipse 80% 60% at 100% 0%, rgba(217, 95, 118, 0.1), transparent 55%),
     radial-gradient(ellipse 50% 40% at 0% 100%, rgba(140, 31, 51, 0.08), transparent 50%),
     var(--paper);
+}
+
+@media (min-width: 1024px) {
+  .about .section-inner {
+    width: 40.8%;
+    max-width: none;
+    margin: 0;
+    margin-right: auto;
+  }
+
+  .about .section-inner h2,
+  .about .mission-statement {
+    max-width: none;
+  }
 }
 
 .gather {
@@ -419,64 +435,254 @@ a:hover {
   background:
     linear-gradient(135deg, rgba(140, 31, 51, 0.06), transparent 40%),
     var(--paper-muted);
+  padding: clamp(3.5rem, 10vh, 6rem) var(--space);
 }
 
-.invite-inner {
+.invite-layout {
   display: grid;
-  gap: 1.25rem;
-  justify-items: start;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: start;
+  width: min(100%, var(--max));
+  margin: 0 auto;
 }
 
-.invite .lead {
-  max-width: 36ch;
-}
-
-.invite-details {
-  display: grid;
-  gap: 1rem 2rem;
-  margin: 0.5rem 0 0.75rem;
-  padding: 0;
-}
-
-@media (min-width: 640px) {
-  .invite-details {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@media (min-width: 768px) {
+  .invite-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 20rem);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
   }
 }
 
-@media (min-width: 900px) {
-  .invite-details {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
+.invite-copy {
+  min-width: 0;
 }
 
-.invite-details div {
-  margin: 0;
+.invite-eyebrow {
+  color: var(--burgundy);
 }
 
-.invite-details dt {
-  margin: 0 0 0.2rem;
-  font-size: 0.75rem;
+.invite-copy h2 {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
   font-weight: 700;
-  letter-spacing: 0.12em;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: var(--burgundy);
+  color: var(--ink);
+  max-width: none;
 }
 
-.invite-details dd {
-  margin: 0;
+.invite-intro {
+  margin: 0 0 1.5rem;
+  max-width: none;
   font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--ink);
+  line-height: 1.65;
+  color: var(--muted);
 }
 
-.invite-details a {
-  color: var(--ink);
-  font-weight: 600;
+.invite-list {
+  margin: 0 0 1.5rem;
+  padding-left: 1.15rem;
+  max-width: none;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
-.invite-details a:hover {
+.invite-list li + li {
+  margin-top: 0.35rem;
+}
+
+.invite-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.invite-meta a {
   color: var(--burgundy);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.invite-meta a:hover {
+  color: var(--rose);
+  text-decoration: underline;
+}
+
+/* ——— Join form card ——— */
+.join-form-wrap {
+  width: 100%;
+  max-width: 20rem;
+  padding: clamp(1.75rem, 4vw, 2.25rem);
+  background: var(--cream);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+@media (min-width: 768px) {
+  .join-form-wrap {
+    justify-self: end;
+  }
+}
+
+@media (max-width: 767px) {
+  .join-form-wrap {
+    max-width: none;
+  }
+}
+
+.join-form {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.join-form-honey {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.join-field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.join-field span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--form-label);
+}
+
+.join-field input {
+  width: 100%;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid var(--form-border);
+  border-radius: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--white);
+  transition: border-color 0.2s var(--ease);
+}
+
+.join-field input::placeholder {
+  color: #a8a29e;
+}
+
+.join-field input:focus {
+  outline: none;
+  border-color: rgba(140, 31, 51, 0.35);
+}
+
+.btn-join {
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 1.05rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--burgundy-deep);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: background 0.25s var(--ease);
+}
+
+.btn-join:hover {
+  background: var(--burgundy);
+}
+
+/* ——— Meet our leaders CTA ——— */
+.leaders-cta {
+  padding-block: clamp(2rem, 5vh, 3rem);
+}
+
+.leaders-cta-link {
+  display: block;
+  width: min(100%, var(--max));
+  margin: 0 auto;
+  padding: 0 var(--space);
+  color: inherit;
+  text-decoration: none;
+}
+
+.leaders-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+  background: linear-gradient(135deg, var(--burgundy-deep), var(--burgundy));
+  border-radius: 0.35rem;
+  color: var(--white);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.leaders-cta-link:hover .leaders-cta-inner {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(140, 31, 51, 0.3);
+}
+
+.leaders-cta .eyebrow {
+  color: var(--rose-soft);
+}
+
+.leaders-cta h2 {
+  margin: 0 0 0.5rem;
+  color: var(--white);
+  max-width: none;
+}
+
+.leaders-cta-text {
+  margin: 0;
+  max-width: 40ch;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
+}
+
+.leaders-cta-arrow {
+  flex-shrink: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--rose-soft);
+  transition: transform 0.25s var(--ease);
+}
+
+.leaders-cta-link:hover .leaders-cta-arrow {
+  transform: translateX(4px);
+}
+
+/* ——— Thank you page ——— */
+.thanks-page {
+  min-height: calc(100svh - var(--header-h));
+  display: grid;
+  place-items: center;
+  padding: calc(var(--header-h) + 2rem) var(--space) 3rem;
+}
+
+.thanks-inner {
+  width: min(100%, 32rem);
+  text-align: center;
+}
+
+.thanks-inner h1 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.thanks-inner .lead {
+  margin: 0 auto 1.5rem;
 }
 
 /* ——— Footer ——— */
