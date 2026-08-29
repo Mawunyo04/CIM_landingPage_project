@@ -845,26 +845,41 @@ a:hover {
 
 .team-grid {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.75rem 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+@media (min-width: 720px) {
+  .team-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .team-card {
   text-align: center;
+  min-width: 0;
 }
 
 .team-photo {
   overflow: hidden;
   border-radius: 0.35rem;
   margin-bottom: 0.75rem;
-  background: var(--white);
+  background: var(--paper-muted);
   box-shadow: 0 4px 16px rgba(140, 31, 51, 0.08);
+  aspect-ratio: 4 / 5;
 }
 
 .team-photo img {
   width: 100%;
-  aspect-ratio: 1;
+  height: 100%;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center center;
+}
+
+.team-photo img.team-photo-portrait {
+  object-position: center 16%;
 }
 
 .team-card h3 {
