@@ -102,12 +102,6 @@ a:hover {
 .header-brand img {
   width: auto;
   height: 2.25rem;
-  filter: brightness(0) invert(1);
-  transition: filter 0.35s var(--ease);
-}
-
-.site-header.is-scrolled .header-brand img {
-  filter: none;
 }
 
 .header-nav {
@@ -424,7 +418,144 @@ a:hover {
 .invite-inner {
   display: grid;
   gap: 1.25rem;
+}
+
+.invite-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+}
+
+@media (min-width: 800px) {
+  .invite-layout {
+    grid-template-columns: 1fr minmax(18rem, 22rem);
+    gap: 3rem;
+  }
+}
+
+.invite-copy {
+  display: grid;
+  gap: 1.25rem;
   justify-items: start;
+}
+
+.btn-ghost-dark {
+  background: transparent;
+  color: var(--burgundy);
+  border-color: rgba(140, 31, 51, 0.35);
+}
+
+.btn-ghost-dark:hover {
+  background: var(--burgundy);
+  color: var(--white);
+  border-color: var(--burgundy);
+}
+
+.join-form {
+  display: grid;
+  gap: 0.9rem;
+  width: 100%;
+  padding: 1.35rem 1.4rem;
+  background: var(--white);
+  border: 1px solid rgba(140, 31, 51, 0.12);
+  border-radius: 0.35rem;
+  box-shadow: 0 8px 24px rgba(140, 31, 51, 0.08);
+}
+
+.join-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+}
+
+.join-form input,
+.join-form textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(26, 26, 26, 0.18);
+  border-radius: 0.3rem;
+  background: var(--paper);
+}
+
+.join-form input:focus,
+.join-form textarea:focus {
+  outline: 2px solid var(--rose);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+
+.join-form .btn {
+  width: 100%;
+  cursor: pointer;
+}
+
+.form-status {
+  min-height: 1.2em;
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--burgundy);
+}
+
+.form-status.is-error {
+  color: var(--burgundy-deep);
+}
+
+.join-form .btn:disabled {
+  opacity: 0.65;
+  cursor: wait;
+  transform: none;
+}
+
+.events-list {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.event-card {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1.15rem;
+  padding: 1.15rem 1.2rem;
+  background: var(--white);
+  border: 1px solid rgba(140, 31, 51, 0.1);
+  border-radius: 0.35rem;
+}
+
+.event-card time {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+}
+
+.event-card h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  max-width: none;
+}
+
+.event-card p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .invite .lead {
@@ -505,7 +636,6 @@ a:hover {
 .footer-brand img {
   width: auto;
   height: 2.5rem;
-  filter: brightness(0) invert(1);
 }
 
 .footer-brand strong {
