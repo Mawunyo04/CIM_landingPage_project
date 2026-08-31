@@ -882,6 +882,10 @@ a:hover {
   object-position: center 16%;
 }
 
+.team-photo img.team-photo-portrait--headroom {
+  object-position: center 28%;
+}
+
 .team-card h3 {
   margin: 0;
   font-family: var(--font-display);
