@@ -871,6 +871,40 @@ a:hover {
   border-bottom: 1px solid rgba(140, 31, 51, 0.1);
 }
 
+.page-hero--gather {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 18rem;
+  padding-block: calc(var(--header-h) + 3.25rem) clamp(3.25rem, 8vh, 4.75rem);
+  background: var(--paper);
+}
+
+.page-hero--gather::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    url("assets/events-worship.jpg") center 72% / cover no-repeat;
+  filter: grayscale(0.12) saturate(0.85) contrast(1.02);
+  transform: scale(1.06);
+}
+
+.page-hero--gather::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(250, 250, 250, 0.42) 0%, rgba(250, 250, 250, 0.5) 55%, rgba(250, 250, 250, 0.7) 100%),
+    linear-gradient(135deg, rgba(140, 31, 51, 0.16), transparent 58%);
+}
+
+.page-hero--gather .page-hero-inner {
+  position: relative;
+}
+
 .page-hero-inner {
   width: min(100%, var(--max));
   margin: 0 auto;
