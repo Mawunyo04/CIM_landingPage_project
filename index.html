@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=7" />
   <link rel="icon" href="assets/cim-logo.png" type="image/png" />
 </head>
 <body>
@@ -19,8 +19,10 @@
       <img src="assets/cim-logo.png" alt="Campus Invasion Movement" width="160" height="48" />
     </a>
     <nav class="header-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
       <a href="about.html">About</a>
       <a href="index.html#gather">Mission</a>
+      <a href="events.html">Events</a>
       <a href="index.html#join">Join</a>
     </nav>
   </header>
@@ -106,8 +108,8 @@
             Fill out the form and we&rsquo;ll connect with you about joining the invasion.
           </p>
           <ul class="invite-list">
-            <li>Come to Connect Bible Study — Wednesdays at 4pm in the Landing.</li>
-            <li>Tell us your name and how to reach you.</li>
+            <li>Come to Connect Bible Study in the Vitruvian Space, Firmitas B.</li>
+            <li>Join Weekly Church Fellowship on Sundays.</li>
             <li>We will follow up with next steps within a few days.</li>
           </ul>
           <p class="invite-meta">
@@ -117,28 +119,21 @@
         </div>
 
         <div class="join-form-wrap">
-          <form class="join-form" action="https://formsubmit.co/ayomideakinsanya11@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New CIM join request from website" />
-            <input type="hidden" name="_next" value="thanks.html" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="text" name="_honey" class="join-form-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <form class="join-form" id="join-form" novalidate>
             <label class="join-field">
-              <span>First name</span>
-              <input type="text" name="first_name" autocomplete="given-name" required />
-            </label>
-            <label class="join-field">
-              <span>Last name</span>
-              <input type="text" name="last_name" autocomplete="family-name" required />
-            </label>
-            <label class="join-field">
-              <span>Phone number</span>
-              <input type="tel" name="phone" autocomplete="tel" required />
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" required />
             </label>
             <label class="join-field">
               <span>Email</span>
               <input type="email" name="email" autocomplete="email" required />
             </label>
+            <label class="join-field">
+              <span>Message</span>
+              <textarea name="message" rows="4" placeholder="Tell us a little about yourself, or leave this blank."></textarea>
+            </label>
             <button class="btn btn-join" type="submit">Join the invasion</button>
+            <p class="form-status" id="join-status" role="status" aria-live="polite"></p>
           </form>
         </div>
       </div>
