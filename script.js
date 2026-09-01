@@ -13,7 +13,8 @@
   const joinForm = document.getElementById("join-form");
   const joinStatus = document.getElementById("join-status");
   const joinButton = joinForm?.querySelector('button[type="submit"]');
-  const JOIN_SHEET_WEBHOOK = "";
+  const JOIN_SHEET_WEBHOOK =
+    "https://script.google.com/macros/s/AKfycbyI4d6A4oKgLPv0Vavqr0HLlpMwGdtGsvgcEcXJsqvKY578xdeapiwJij977uQOA_uP/exec";
 
   const setStatus = (message, isError = false) => {
     if (!joinStatus) return;
@@ -51,9 +52,9 @@
         body: JSON.stringify(payload),
       });
       joinForm.reset();
-      setStatus("Thank you. We received your request and will be in touch.");
+      setStatus("Thanks for joining!");
     } catch (err) {
-      setStatus("Something went wrong. Please try again, or reach us on Instagram.", true);
+      setStatus("Something went wrong. Please try again.", true);
     } finally {
       if (joinButton) joinButton.disabled = false;
     }

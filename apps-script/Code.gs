@@ -1,8 +1,11 @@
+const SPREADSHEET_ID = "YOUR_SPREADSHEET_ID";
+const SHEET_NAME = "Signups";
+
 function doPost(e) {
   try {
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Signups");
+    const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME);
     if (!sheet) {
-      throw new Error('No sheet named "Signups". Rename the tab to Signups.');
+      throw new Error('No sheet named "' + SHEET_NAME + '".');
     }
 
     const data = JSON.parse(e.postData.contents);
